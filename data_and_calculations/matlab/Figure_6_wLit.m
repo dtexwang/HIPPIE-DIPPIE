@@ -39,7 +39,7 @@ text(sam_maturity, deuteration, num2str(sam_num(2:end), '%.0g'), ...
 set(gca(), 'XLim', [0.2 1.7])
 ylim([0 100])
 
-xlabel('EASY%Ro')
+xlabel('Maturity (%R_o)')
 ylabel('Methane Deuteration (%)')
 grid on
 set(gca, 'TickLength', [0.0200 0.0500]*1.5)
@@ -310,4 +310,5 @@ set(gcf, 'PaperPosition', [2.6719    3.6667    3.1563    3.6667])
 
 set(gcf,'renderer','opengl','renderermode','manual')
 print('Figure 6_raw_wLit.eps', '-depsc2')
+print('Figure 6_raw_wLit.pdf', '-dpdf')
 savefig('Figure 6_wLit')

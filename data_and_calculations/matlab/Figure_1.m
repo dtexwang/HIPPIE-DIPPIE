@@ -86,7 +86,7 @@ grid minor
 set(gca(), 'TickLength', 2.5*get(gca(),'TickLength'))
 set(gca(), 'XMinorTick', 'on', 'YMinorTick', 'on')
 ytickformat('%.1f')
-ylabel('EASY%Ro')
+ylabel('Maturity (%R_o)')
 xlabel('Time (hours)')
 text(-65, 1.35, 'B', ...
     'color', 'k', ...
@@ -97,5 +97,5 @@ text(-65, 1.35, 'B', ...
 
 %% Save Figure
 set(gcf, 'PaperPosition', [1.3333    2.8073    5.8333    5.3854])
-print('Figure 1_raw_new0322.eps', '-depsc2')
-print('Figure 1_raw_new0322.pdf', '-dpdf')
+print('Figure 1_raw_new220203.eps', '-depsc2')
+print('Figure 1_raw_new220203.pdf', '-dpdf')
