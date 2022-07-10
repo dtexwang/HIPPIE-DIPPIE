@@ -1,0 +1,61 @@
+
+#xl = pd.ExcelFile('CoolingModel_extract.xlsx')
+#print(xl.sheet_names)
+
+# This messes up because it doesn't close the Excel file.
+
+#d = {} # assign sheet names to dict
+#for sheet in xl.sheet_names:
+#    d[f'{sheet}'] = pd.read_excel(xl, sheet_name=sheet, header=[0,1])
+#
+xl_file_stat = os.stat(os.path.relpath('CoolingModel_extract.xlsx'))
+if os.fstat(3) == xl_file_stat:
+    print('File is open')
+
+
+import psutil
+
+p = psutil.Process()
+print(p.open_files())
+
+d['SimTime']
+
+d['SimTime'][('Cooling Rate = 1 °C/Myr', 'Init T = 150 °C')]
+d['SimTime'].columns
+
+d['colors']
+d['colors'].iloc[0][( 'Cooling Rate = 1 °C/Myr', 'Init T = 175 °C')]
+
+h1 = plt.figure(1)
+
+n = (np.round(d['SurrT'][(i)].iloc[0]))
+f'{n:.0f} °C'
+
+d['SimTime'][['Cooling Rate = 1 °C/Myr']].columns
+
+for i in range(4):
+    plt.plot(d['SimTime'][('Cooling Rate = 1 °C/Myr', 'Init T = 150 °C')], d['SurrT'][('Cooling Rate = 1 °C/Myr', 'Init T = 150 °C')])
+    
+
+fig, (ax1, ax2) = plt.subplots(1, 2)
+
+for i in d['SimTime'][['Cooling Rate = 1 °C/Myr']].columns:
+    ax1.plot(d['Delta'][(i)], d['SurrT'][(i)], color=d['colors'].iloc[0][i], linestyle=d['colors'].iloc[1][i])
+ax1.plot(d['Keq'][(i)], d['SurrT'][(i)], color='gray', linewidth=0.5, linestyle='dashed')
+ax1.invert_yaxis()
+ax1.set_xlim([1.5,4.5])
+
+for i in d['SimTime'][['Cooling Rate = 10 °C/Myr']].columns:
+    ax2.plot(d['Delta'][(i)], d['SurrT'][(i)], color=d['colors'].iloc[0][i], linestyle=d['colors'].iloc[1][i])
+ax2.plot(d['Keq'][(i)], d['SurrT'][(i)], color='gray', linewidth=0.5, linestyle='dashed')
+ax2.invert_yaxis()
+
+
+
+==========
+
+
+mpl.font_manager._rebuild()
+
+fp = mpl.font_manager.FontProperties(fname=r"C:\Windows\Fonts\Helvetica.ttf")
+print(fp.get_name())
